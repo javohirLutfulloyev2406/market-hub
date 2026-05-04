@@ -1,0 +1,42 @@
+server:
+  port: ${PORT:8080}
+spring:
+  application:
+    name: market-hub
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:5432/${DB_NAME:marketHub_db}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:root}
+    driver-class-name: org.postgresql.Driver
+    generate-unique-name: false
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    show-sql: true
+    properties:
+      hibernate:
+        hbm2ddl.create_namespaces: true
+        jdbc.lob.non_contextual_creation: true
+
+  # Logging configuration
+  logging:
+    config: classpath:log4j2.properties
+    level:
+      org:
+        springframework:
+          web: DEBUG
+        hibernate: ERROR
+
+init:
+  database: false
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:vo0JQPx0rXk$g%JG@J8XAR734PrK#*^sUAS8VDum^N*!7bjmUW/XN2LNg9Q5gy5Ew&jrTp%y^2D_}
+    expire: ${JWT_EXPIRE:864000000}
+
+
