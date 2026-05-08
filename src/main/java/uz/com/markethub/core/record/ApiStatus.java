@@ -89,6 +89,31 @@ public record ApiStatus(String key, int code, String defaultMessage) {
             -16,
             "The number of attempts has overflowed"
     );
+
+    public static final ApiStatus ERR_INSUFFICIENT_STOCK = new ApiStatus(
+            "ERR_INSUFFICIENT_STOCK",
+            -17,
+            "Insufficient stock for the requested product"
+    );
+
+    public static final ApiStatus ERR_INVALID_ORDER_TRANSITION = new ApiStatus(
+            "ERR_INVALID_ORDER_TRANSITION",
+            -18,
+            "Invalid order status transition"
+    );
+
+    public static final ApiStatus ERR_CART_EMPTY = new ApiStatus(
+            "ERR_CART_EMPTY",
+            -19,
+            "Cart is empty, cannot proceed to checkout"
+    );
+
+    public static final ApiStatus ERR_CONCURRENT_MODIFICATION = new ApiStatus(
+            "ERR_CONCURRENT_MODIFICATION",
+            -20,
+            "Product stock was modified by another request, please retry"
+    );
+
     public ApiResponseMessage map2ApiResponseMessage() {
         return new ApiResponseMessage(this.code, this.defaultMessage);
     }
