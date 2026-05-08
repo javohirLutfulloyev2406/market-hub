@@ -5,9 +5,11 @@ import io.minio.*;
 import io.minio.http.Method;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import uz.com.markethub.core.fileStorage.MinioStorageService;
+import uz.com.markethub.core.config.MinioClientConfig;
 
 import java.io.ByteArrayInputStream;
 import java.util.concurrent.TimeUnit;

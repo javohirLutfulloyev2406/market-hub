@@ -1,4 +1,4 @@
-﻿package uz.com.markethub.module.User.controller;
+package uz.com.markethub.module.User.controller;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

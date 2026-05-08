@@ -1,4 +1,4 @@
-﻿package uz.com.markethub.module.settings.service.impl;
+package uz.com.markethub.module.settings.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;

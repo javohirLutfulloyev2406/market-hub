@@ -1,19 +1,19 @@
-//package uz.com.markethub.core.config;
-//
-//import org.springframework.beans.factory.annotation.Value;
-//import org.springframework.stereotype.Component;
-//
-//@Component
-//public record MinioConfig(String url, String consoleUrl, String accessKey, String secretKey, String bucketName) {
-////    public MinioConfig(@Value("${minio.url}") String url,
-////                       @Value("${minio.console-url}") String consoleUrl,
-////                       @Value("${minio.access-key}") String accessKey,
-////                       @Value("${minio.secret-key}") String secretKey,
-////                       @Value("${minio.bucket}") String bucketName) {
-////        this.url = url;
-////        this.consoleUrl = consoleUrl;
-////        this.accessKey = accessKey;
-////        this.secretKey = secretKey;
-////        this.bucketName = bucketName;
-////    }
-//}
+package uz.com.markethub.core.config;
+
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
+
+@Getter
+@Setter
+@Component
+@ConfigurationProperties(prefix = "minio")
+public class MinioConfig {
+    private String url;
+    private String consoleUrl;
+    private String accessKey;
+    private String secretKey;
+    private String bucketName;
+}

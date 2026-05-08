@@ -1,4 +1,4 @@
-﻿package uz.com.markethub.module.fileSystem.controller;
+package uz.com.markethub.module.fileSystem.controller;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

@@ -1,4 +1,4 @@
-﻿package uz.com.markethub.module.settings.service.impl;
+package uz.com.markethub.module.settings.service.impl;
 
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;

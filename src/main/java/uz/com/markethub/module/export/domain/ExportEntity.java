@@ -13,6 +13,7 @@ import uz.com.markethub.module.export.constants.ReportType;
 import uz.com.markethub.module.export.dto.ExportDTO;
 import uz.com.markethub.module.fileSystem.domain.FileEntity;
 
+
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -56,7 +57,6 @@ public class ExportEntity extends AbstractAuditEntity<Long> implements Serializa
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "file_id")
     private FileEntity file;
-
 
     public ExportDTO.Full map2FullDTO(MinioStorageService storageService) {
         return ExportDTO.Full.builder()

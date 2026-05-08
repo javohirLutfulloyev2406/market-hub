@@ -1,24 +1,21 @@
-//package uz.com.markethub.core.config;
-//
-//
-//import io.minio.MinioClient;
-//import org.springframework.context.annotation.Bean;
-//import org.springframework.context.annotation.Configuration;
-//
-//@Configuration
-//public class MinioClientConfig {
-//
-//    private final MinioConfig minioConfig;
-//
-//    public MinioClientConfig(MinioConfig minioConfig) {
-//        this.minioConfig = minioConfig;
-//    }
-//    @Bean11
+package uz.com.markethub.core.config;
 
-//    public MinioClient minioClient() {
-//        return MinioClient.builder()
-//                .endpoint(minioConfig.url())
-//                .credentials(minioConfig.accessKey(), minioConfig.secretKey())
-//                .build();
-//    }
-//}
+import io.minio.MinioClient;
+import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@RequiredArgsConstructor
+public class MinioClientConfig {
+
+    private final MinioConfig minioConfig;
+
+    @Bean
+    public MinioClient minioClient() {
+        return MinioClient.builder()
+                .endpoint(minioConfig.getUrl())
+                .credentials(minioConfig.getAccessKey(), minioConfig.getSecretKey())
+                .build();
+    }
+}
