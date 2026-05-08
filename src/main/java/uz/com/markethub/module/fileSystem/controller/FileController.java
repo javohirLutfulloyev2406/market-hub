@@ -1,4 +1,4 @@
-package uz.com.markethub.module.fileSystem.controller;
+﻿package uz.com.markethub.module.fileSystem.controller;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import uz.com.markethub.core.dto.ApiResponse;
-import uz.com.markethub.core.exeption.ResourceNotFoundException;
+import uz.com.markethub.core.exception.ResourceNotFoundException;
 import uz.com.markethub.core.record.ApiStatus;
 import uz.com.markethub.core.service.ApiResponseMessageService;
 import uz.com.markethub.core.util.HelperUtil;

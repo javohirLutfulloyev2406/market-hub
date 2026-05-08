@@ -1,4 +1,4 @@
-package uz.com.markethub.module.settings.service.impl;
+﻿package uz.com.markethub.module.settings.service.impl;
 
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
@@ -8,7 +8,7 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.util.MultiValueMap;
-import uz.com.markethub.core.exeption.ResourceNotFoundException;
+import uz.com.markethub.core.exception.ResourceNotFoundException;
 import uz.com.markethub.core.record.ApiStatus;
 import uz.com.markethub.core.util.HelperUtil;
 import uz.com.markethub.module.settings.dto.ApiMessageDTO;

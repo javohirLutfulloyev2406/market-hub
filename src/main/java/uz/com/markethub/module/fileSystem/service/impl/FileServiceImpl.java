@@ -1,4 +1,4 @@
-package uz.com.markethub.module.fileSystem.service.impl;
+﻿package uz.com.markethub.module.fileSystem.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -11,7 +11,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 import uz.com.markethub.core.enums.FileExtension;
 import uz.com.markethub.core.enums.FilePrefix;
-import uz.com.markethub.core.exeption.ResourceNotFoundException;
+import uz.com.markethub.core.exception.ResourceNotFoundException;
 import uz.com.markethub.core.fileStorage.MinioStorageService;
 import uz.com.markethub.core.record.ApiStatus;
 import uz.com.markethub.core.specification.GenericSpecifications;

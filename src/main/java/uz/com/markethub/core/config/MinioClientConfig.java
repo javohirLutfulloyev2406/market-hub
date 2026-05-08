@@ -13,7 +13,8 @@
 //    public MinioClientConfig(MinioConfig minioConfig) {
 //        this.minioConfig = minioConfig;
 //    }
-//    @Bean
+//    @Bean11
+
 //    public MinioClient minioClient() {
 //        return MinioClient.builder()
 //                .endpoint(minioConfig.url())

@@ -1,4 +1,4 @@
-package uz.com.markethub.module.User.service.impl;
+﻿package uz.com.markethub.module.User.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -8,7 +8,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import uz.com.markethub.core.exeption.ResourceNotFoundException;
+import uz.com.markethub.core.exception.ResourceNotFoundException;
 import uz.com.markethub.core.record.ApiStatus;
 import uz.com.markethub.core.specification.GenericSpecifications;
 import uz.com.markethub.module.User.domain.UserEntity;
