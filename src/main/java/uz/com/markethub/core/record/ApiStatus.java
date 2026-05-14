@@ -114,6 +114,18 @@ public record ApiStatus(String key, int code, String defaultMessage) {
             "Product stock was modified by another request, please retry"
     );
 
+    public static final ApiStatus ERR_REVIEW_ALREADY_EXIST = new ApiStatus(
+            "ERR_REVIEW_ALREADY_EXIST",
+            -21,
+            "Review already exists for order item"
+    );
+
+    public static final ApiStatus ERR_INVALID_PARAMETER = new ApiStatus(
+            "ERR_INVALID_PARAMETER",
+            -22,
+            "Invalid parameter provided"
+    );
+
     public ApiResponseMessage map2ApiResponseMessage() {
         return new ApiResponseMessage(this.code, this.defaultMessage);
     }
