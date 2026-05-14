@@ -14,6 +14,7 @@ import uz.com.markethub.core.enums.BaseStatus;
 import uz.com.markethub.module.category.domain.CategoryEntity;
 import uz.com.markethub.module.product.domain.ProductEntity;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 @Getter
@@ -22,7 +23,7 @@ import java.math.BigDecimal;
 @SuperBuilder
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ProductDTO {
+public class ProductDTO implements Serializable {
 
     private Long id;
     private String name;

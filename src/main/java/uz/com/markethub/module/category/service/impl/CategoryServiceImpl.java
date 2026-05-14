@@ -2,6 +2,8 @@ package uz.com.markethub.module.category.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -27,6 +29,7 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     @Transactional
+    @CacheEvict(value = "categories", key = "'tree'")
     public CategoryDTO.Full create(Long logId, CategoryDTO.CreateOrUpdate dto) {
         log.debug("Request -- logId: {}, create data: {}", logId, dto);
 
@@ -44,6 +47,7 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     @Transactional
+    @CacheEvict(value = "categories", key = "'tree'")
     public CategoryDTO.Full update(Long logId, Long id, CategoryDTO.CreateOrUpdate dto) {
         log.debug("Request -- logId: {}, update data: {}", logId, dto);
 
@@ -79,6 +83,7 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     @Transactional(readOnly = true)
+    @Cacheable(value = "categories", key = "'tree'")
     public List<CategoryDTO> findAllShortInfo(Long logId) {
         log.debug("Request -- logId: {}, findAllShortInfo", logId);
 
@@ -118,6 +123,7 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     @Transactional
+    @CacheEvict(value = "categories", key = "'tree'")
     public void deleteById(Long logId, Long id) {
         log.debug("Request -- logId: {}, deleteBy id: {}", logId, id);
 

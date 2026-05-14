@@ -2,6 +2,9 @@ package uz.com.markethub.module.product.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -47,6 +50,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     @Transactional
+    @CachePut(value = "products", key = "#id")
     public ProductDTO.Full update(Long logId, Long id, ProductDTO.CreateOrUpdate dto) {
         log.debug("Request -- logId: {}, update data: {}", logId, dto);
 
@@ -96,6 +100,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     @Transactional(readOnly = true)
+    @Cacheable(value = "products", key = "#id")
     public ProductDTO.Full findById(Long logId, Long id) {
         log.debug("Request -- logId: {}, findBy id: {}", logId, id);
 
@@ -121,6 +126,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     @Transactional
+    @CacheEvict(value = "products", key = "#id")
     public void deleteById(Long logId, Long id) {
         log.debug("Request -- logId: {}, deleteBy id: {}", logId, id);
 

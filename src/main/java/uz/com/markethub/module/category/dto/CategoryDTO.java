@@ -9,13 +9,15 @@ import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 import uz.com.markethub.module.category.domain.CategoryEntity;
 
+import java.io.Serializable;
+
 @Getter
 @Setter
 @ToString
 @SuperBuilder
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class CategoryDTO {
+public class CategoryDTO implements Serializable {
     private Long id;
     private String name;
     private String description;
